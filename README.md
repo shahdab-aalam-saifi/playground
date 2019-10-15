@@ -1,5 +1,12 @@
 # Playground
 
 * Filtering even and odd numbers
-* Sort usr-defined object using `Comparator`
-* Min and maximum element of integer the array
+* Minimum and maximum element of integer the array
+
+## Comparable & Comparator
+* Sort user-defined object using `Comparator`
+
+## Multi-threading
+* Read multiple files using `Thread`
+* Consumer-Producer `Thread`
+* Dining Philosopher
