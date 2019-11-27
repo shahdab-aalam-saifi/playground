@@ -2,6 +2,7 @@ package com.saalamsaifi.design.pattern.creation.singleton;
 
 import java.io.Serializable;
 import java.time.Clock;
+import java.time.DayOfWeek;
 import java.time.LocalDateTime;
 import java.util.Objects;
 
@@ -11,14 +12,16 @@ public class DateUtil implements Serializable, Cloneable {
 	private LocalDateTime date;
 
 	/**
-	 * 
+	 * Private Constructor
 	 */
 	private DateUtil() {
 		this.date = LocalDateTime.now(Clock.systemUTC());
 	}
 
 	/**
-	 * @return
+	 * Returns the shared/singleton instance of DateUtil
+	 * 
+	 * @return DateUtil
 	 */
 	public static DateUtil getInstance() {
 		if (Objects.isNull(instance)) {
@@ -34,14 +37,18 @@ public class DateUtil implements Serializable, Cloneable {
 	}
 
 	/**
-	 * @return
+	 * Returns the current instance of the class
+	 * 
+	 * @return Object
 	 */
 	protected Object readResolve() {
 		return instance;
 	}
 
 	/**
-	 *
+	 * Cloning of the instance is not allowed
+	 * 
+	 * @throws {@link CloneNotSupportedException}
 	 */
 	@Override
 	protected Object clone() throws CloneNotSupportedException {
@@ -49,14 +56,16 @@ public class DateUtil implements Serializable, Cloneable {
 	}
 
 	/**
-	 * @return
+	 * @return {@link LocalDateTime}
 	 */
 	public LocalDateTime getDate() {
 		return this.date;
 	}
 
 	/**
-	 * @return
+	 * Returns the {@link DayOfWeek} as {@link String} in lower-case 
+	 * 
+	 * @return {@link String}
 	 */
 	public String getDay() {
 		return this.date.getDayOfWeek().toString().toLowerCase();
