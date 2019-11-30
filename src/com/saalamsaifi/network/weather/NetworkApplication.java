@@ -1,10 +1,10 @@
 package com.saalamsaifi.network.weather;
 
 import java.io.IOException;
-import java.util.Objects;
+import java.time.format.DateTimeFormatter;
 
-import org.json.JSONArray;
-import org.json.JSONObject;
+import com.saalamsaifi.network.weather.model.CityWeather;
+import com.saalamsaifi.network.weather.model.Weather;
 
 import okhttp3.Call;
 import okhttp3.Callback;
@@ -14,7 +14,7 @@ import okhttp3.Response;
 
 public class NetworkApplication {
 	public static void main(String[] args) {
-		WeatherApi.getInstance().addCity(1259229).addCity(2934246).addCity(360630).addCity(2640692);
+		WeatherApi.getInstance().addCity("1259229").addCity("2934246").addCity("360630").addCity("2640692");
 
 		OkHttpClient client = new OkHttpClient();
 
@@ -24,22 +24,14 @@ public class NetworkApplication {
 
 			@Override
 			public void onResponse(Call call, Response response) throws IOException {
-				JSONArray cities = new JSONObject(response.body().string()).optJSONArray("list");
+				final String r = response.body().string();
 
-				if (Objects.nonNull(cities)) {
-					for (int i = 0; i < cities.length(); i++) {
-						JSONObject city = cities.optJSONObject(i);
-						
-						if (Objects.nonNull(city)) {
-							System.out.format("City: %s%n" ,city.optString("name"));
-							
-							JSONObject main = city.optJSONObject("main");
-							
-							if (Objects.nonNull(main)) {
-								System.out.format("Temperature (min/max): %s F (%s/%s)%n%n", main.optString("temp"), main.optString("temp_min"), main.optString("temp_max"));
-							}
-						}
-					}
+				CityWeather cities = new CityWeather(r);
+
+				for (Weather weather : cities.getCityWeather()) {
+					System.out.format("City: %s [%s]%n", weather.getName(), weather.getDateTime().format(DateTimeFormatter.ofPattern("dd/MM/yyyy hh:mm:ss a")));
+					System.out.format("Temperature: %s F (%s/%s)%n", weather.getTemperature(), weather.getMinTemperature(), weather.getMaxTemperature());
+					System.out.format("Wind: %s m/s %s deg%n%n", weather.getSpeed(), weather.getDegree());
 				}
 
 				System.exit(0);

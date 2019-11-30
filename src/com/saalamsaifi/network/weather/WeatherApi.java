@@ -34,12 +34,13 @@ public class WeatherApi {
 		return instance;
 	}
 
-	public WeatherApi addCity(Integer id) {
-		this.ids.add(String.valueOf(id));
+	public WeatherApi addCity(String id) {
+		this.ids.add(id);
 		return this;
 	}
 
 	public String getCurrentWeatherApi() {
-		return MessageFormat.format(WEAHTER_API, String.join(ID_SEPARATOR, this.ids), System.getProperty(WATHER_API_KEY));
+		return MessageFormat.format(WEAHTER_API, String.join(ID_SEPARATOR, this.ids),
+				System.getProperty(WATHER_API_KEY));
 	}
 }
