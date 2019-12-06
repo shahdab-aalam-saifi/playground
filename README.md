@@ -23,6 +23,7 @@
 
 * Factory Pattern
 * Abstract Factory Pattern
+* Singleton
 
 ## Multi-threading
 
@@ -30,6 +31,8 @@
 * Consumer-Producer `Thread`
 * Dining Philosopher
 
+## Network & REST
 
-
+* Weather API
+  * Environment Variable - https://stackoverflow.com/a/12414144
 

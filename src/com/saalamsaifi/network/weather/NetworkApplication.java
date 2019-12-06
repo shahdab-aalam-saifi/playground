@@ -41,6 +41,7 @@ public class NetworkApplication {
 			public void onFailure(Call call, IOException exception) {
 				System.out.println(exception);
 				call.cancel();
+				System.exit(0);
 			}
 		});
 	}

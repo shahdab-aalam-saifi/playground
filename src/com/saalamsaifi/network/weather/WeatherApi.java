@@ -7,7 +7,7 @@ import java.util.Set;
 
 public class WeatherApi {
 	private static final String WEAHTER_API = "https://api.openweathermap.org/data/2.5/group?id={0}&APPID={1}";
-	private static final String WATHER_API_KEY = "weather.api.key";
+	private static final String WATHER_API_KEY = "WEATHER_API_KEY";
 	private static final String ID_SEPARATOR = ",";
 
 	private Set<String> ids;
@@ -40,7 +40,8 @@ public class WeatherApi {
 	}
 
 	public String getCurrentWeatherApi() {
+//		https://stackoverflow.com/a/12414144
 		return MessageFormat.format(WEAHTER_API, String.join(ID_SEPARATOR, this.ids),
-				System.getProperty(WATHER_API_KEY));
+				System.getenv(WATHER_API_KEY));
 	}
 }
