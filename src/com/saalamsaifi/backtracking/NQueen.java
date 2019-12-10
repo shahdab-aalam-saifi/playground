@@ -1,15 +1,28 @@
 package com.saalamsaifi.backtracking;
 
+import java.util.Objects;
+
 public class NQueen {
-	public NQueen() {
-		// Private Constructor
+	private static NQueen instance;
+
+	private NQueen() {
+	}
+
+	public static NQueen getInstance() {
+		if (Objects.isNull(instance)) {
+			synchronized (NQueen.class) {
+				if (Objects.isNull(instance)) {
+					instance = new NQueen();
+				}
+			}
+		}
+		return instance;
 	}
 
 	public void solve(ChessBoard board) {
 		placeQueens(board, 0);
-		System.out.println(board);
 	}
-	
+
 	private boolean placeQueens(ChessBoard board, int nQueen) {
 		if (nQueen == board.getSize()) {
 			return true;
