@@ -1,5 +1,7 @@
 # Playground
 
+## Miscellaneous
+
 * Filtering even and odd numbers
 * Minimum and maximum element of integer the array
 * Remove duplicate elements from list
@@ -8,6 +10,8 @@
 * Nested parentheses
 * One away
 * String basic compression
+
+## Immutable
 
 ## Comparable & Comparator
 
@@ -35,4 +39,8 @@
 
 * Weather API
   * Environment Variable - https://stackoverflow.com/a/12414144
+  
+## Algorithm
+
+* N-Queens
 

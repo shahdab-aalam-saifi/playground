@@ -14,8 +14,8 @@ public class SortUserDefineObject {
 		students.add(new Student(20, "Sheela"));
 		students.add(new Student(19, "Mishika"));
 
-		// Roll number wise sorting
-		Collections.sort(students, (Student o1, Student o2) -> o1.getRollNumber() - o2.getRollNumber());
+		// Roll number wise sorting using Comparable (I)
+		Collections.sort(students);
 
 		System.out.println(students);
 
