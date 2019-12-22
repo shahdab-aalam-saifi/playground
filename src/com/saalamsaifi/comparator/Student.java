@@ -1,6 +1,8 @@
 package com.saalamsaifi.comparator;
 
-public class Student {
+import java.util.Objects;
+
+public class Student implements Comparable<Student> {
 	private int rollNumber;
 	private String name;
 
@@ -28,5 +30,27 @@ public class Student {
 	@Override
 	public String toString() {
 		return String.format("{ %d, %s }", this.rollNumber, this.name);
+	}
+
+	@Override
+	public int hashCode() {
+		return Objects.hash(name, rollNumber);
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj) {
+			return true;
+		}
+		if (!(obj instanceof Student)) {
+			return false;
+		}
+		Student other = (Student) obj;
+		return Objects.equals(name, other.name) && rollNumber == other.rollNumber;
+	}
+
+	@Override
+	public int compareTo(Student o) {
+		return this.rollNumber - o.rollNumber;
 	}
 }
