@@ -1,5 +1,10 @@
 # Playground
 
+## Core Concepts
+
+* `equals()` and `hashCode()` - https://stackoverflow.com/questions/2265503/why-do-i-need-to-override-the-equals-and-hashcode-methods-in-java
+ * You must override `hashCode()` in every class that overrides `equals()`. Failure to do so will result in a violation of the general contract for `Object.hashCode()`, which will prevent your class from functioning properly in conjunction with all hash-based collections, including `HashMap`, `HashSet`, and `Hashtable`. - Effective Java, by Joshua Bloch 
+
 ## Miscellaneous
 
 * Filtering even and odd numbers
