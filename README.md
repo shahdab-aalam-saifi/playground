@@ -13,6 +13,12 @@
 
 ## Immutable
 
+* The class must be declared as `final`
+* Data members in the class must be declared as `final`
+* A parameterized constructor
+* Getter method for all the variables in it - _No setters_
+* https://www.geeksforgeeks.org/create-immutable-class-java/
+
 ## Comparable & Comparator
 
 * Sort user-defined object using `Comparator`
@@ -28,6 +34,7 @@
 * Factory Pattern
 * Abstract Factory Pattern
 * Singleton
+* Builder
 
 ## Multi-threading
 
