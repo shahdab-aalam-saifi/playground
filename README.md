@@ -1,5 +1,9 @@
 # Playground
 
+## Core Concepts
+
+* You must override `hashCode()` in every class that overrides `equals()`. Failure to do so will result in a violation of the general contract for `Object.hashCode()`, which will prevent your class from functioning properly in conjunction with all hash-based collections, including `HashMap`, `HashSet`, and `Hashtable`. - __Effective Java, by Joshua Bloch__ 
+
 ## Miscellaneous
 
 * Filtering even and odd numbers
@@ -13,11 +17,7 @@
 
 ## Immutable
 
-* The class must be declared as `final`
-* Data members in the class must be declared as `final`
-* A parameterized constructor
-* Getter method for all the variables in it - _No setters_
-* https://www.geeksforgeeks.org/create-immutable-class-java/
+ * with mutable object
 
 ## Comparable & Comparator
 
@@ -28,6 +28,8 @@
 * Navigable Map
 
 ## Design Pattern
+
+* Dependency Injection
 
 ### Creational
 
@@ -45,9 +47,13 @@
 ## Network & REST
 
 * Weather API
-  * Environment Variable - https://stackoverflow.com/a/12414144
   
 ## Algorithm
 
 * N-Queens
+
+## Links
+
+* (Environment Variable)[https://stackoverflow.com/a/12414144]
+* ( `equals()` and `hashCode()` )[https://stackoverflow.com/questions/2265503/why-do-i-need-to-override-the-equals-and-hashcode-methods-in-java]
 
