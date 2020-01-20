@@ -2,9 +2,7 @@
 
 ## Core Concepts
 
-* `equals()` and `hashCode()` - https://stackoverflow.com/questions/2265503/why-do-i-need-to-override-the-equals-and-hashcode-methods-in-java
- * You must override `hashCode()` in every class that overrides `equals()`. Failure to do so will result in a violation of the general contract for `Object.hashCode()`, which will prevent your class from functioning properly in conjunction with all hash-based collections, including `HashMap`, `HashSet`, and `Hashtable`. - Effective Java, by Joshua Bloch 
-* 
+* You must override `hashCode()` in every class that overrides `equals()`. Failure to do so will result in a violation of the general contract for `Object.hashCode()`, which will prevent your class from functioning properly in conjunction with all hash-based collections, including `HashMap`, `HashSet`, and `Hashtable`. - __Effective Java, by Joshua Bloch__ 
 
 ## Miscellaneous
 
@@ -38,6 +36,7 @@
 * Factory Pattern
 * Abstract Factory Pattern
 * Singleton
+* Builder
 
 ## Multi-threading
 
@@ -48,9 +47,13 @@
 ## Network & REST
 
 * Weather API
-  * Environment Variable - https://stackoverflow.com/a/12414144
   
 ## Algorithm
 
 * N-Queens
+
+## Links
+
+* (Environment Variable)[https://stackoverflow.com/a/12414144]
+* ( `equals()` and `hashCode()` )[https://stackoverflow.com/questions/2265503/why-do-i-need-to-override-the-equals-and-hashcode-methods-in-java]
 
