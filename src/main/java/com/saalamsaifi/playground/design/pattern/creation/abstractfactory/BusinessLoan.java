@@ -1,13 +1,12 @@
 package com.saalamsaifi.playground.design.pattern.creation.abstractfactory;
 
 public class BusinessLoan extends Loan {
-	public BusinessLoan(double rate) {
-		this.rate = rate;
-	}
+  public BusinessLoan(double rate) {
+    this.rate = rate;
+  }
 
-	@Override
-	double getInterestRate() {
-		return this.rate;
-	}
-
+  @Override
+  double getInterestRate() {
+    return this.rate;
+  }
 }

@@ -4,44 +4,44 @@ import java.util.ArrayList;
 import java.util.Random;
 
 public class FilterEvenOdd {
-	
-	private boolean isEven(int number) {
-		return number % 2 == 0;
-	}
 
-	public int[] randomIntegers(int length) {
-		if (length <= 0) {
-			return new int[] {};
-		}
+  private boolean isEven(int number) {
+    return number % 2 == 0;
+  }
 
-		Random random = new Random(System.currentTimeMillis());
-		int[] array = new int[length];
+  public int[] randomIntegers(int length) {
+    if (length <= 0) {
+      return new int[] {};
+    }
 
-		for (int i = 0; i < length; i++) {
-			array[i] = random.nextInt(1000);
-		}
+    var random = new Random(System.currentTimeMillis());
+    var array = new int[length];
 
-		return array;
-	}
+    for (var i = 0; i < length; i++) {
+      array[i] = random.nextInt(1000);
+    }
 
-	// TODO: Avoid/remove this warning
-	@SuppressWarnings("unchecked")
-	public ArrayList<ArrayList<Integer>>[] filterEvenOdd(int[] numbers) {
-		if (numbers == null) {
-			return new ArrayList[] {}; 
-		}
+    return array;
+  }
 
-		ArrayList<Integer> evenNumbers = new ArrayList<>();
-		ArrayList<Integer> oddNumbers = new ArrayList<>();
+  // TODO: Avoid/remove this warning
+  @SuppressWarnings("unchecked")
+  public ArrayList<ArrayList<Integer>>[] filterEvenOdd(int[] numbers) {
+    if (numbers == null) {
+      return new ArrayList[] {};
+    }
 
-		for (Integer integer : numbers) {
-			if (isEven(integer)) {
-				evenNumbers.add(integer);
-			} else {
-				oddNumbers.add(integer);
-			}
-		}
+    ArrayList<Integer> evenNumbers = new ArrayList<>();
+    ArrayList<Integer> oddNumbers = new ArrayList<>();
 
-		return new ArrayList[] { evenNumbers, oddNumbers };
-	}
+    for (Integer integer : numbers) {
+      if (isEven(integer)) {
+        evenNumbers.add(integer);
+      } else {
+        oddNumbers.add(integer);
+      }
+    }
+
+    return new ArrayList[] {evenNumbers, oddNumbers};
+  }
 }

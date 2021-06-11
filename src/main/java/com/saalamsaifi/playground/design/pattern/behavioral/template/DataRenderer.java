@@ -1,17 +1,17 @@
 package com.saalamsaifi.playground.design.pattern.behavioral.template;
 
 public abstract class DataRenderer {
-	public final void render() {
-		String raw = null;
-		String processed = null;
+  public final void render() {
+    String raw = null;
+    String processed = null;
 
-		raw = read();
-		processed = process(raw);
+    raw = read();
+    processed = process(raw);
 
-		System.out.println(processed);
-	}
+    System.out.println(processed);
+  }
 
-	public abstract String read();
+  public abstract String read();
 
-	public abstract String process(String data);
+  public abstract String process(String data);
 }

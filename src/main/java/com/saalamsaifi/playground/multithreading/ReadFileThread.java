@@ -11,38 +11,41 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ReadFileThread implements Runnable {
-	private List<String> lines;
-	private String fileName;
+  private final List<String> lines;
+  private final String fileName;
 
-	public ReadFileThread(String fileName) {
-		this.fileName = fileName;
-		this.lines = new ArrayList<>();
-	}
+  public ReadFileThread(String fileName) {
+    this.fileName = fileName;
+    this.lines = new ArrayList<>();
+  }
 
-	public List<String> getLines() {
-		return lines;
-	}
+  public List<String> getLines() {
+    return lines;
+  }
 
-	public String getFileName() {
-		return fileName;
-	}
+  public String getFileName() {
+    return fileName;
+  }
 
-	@Override
-	public void run() {
-		InputStream stream = Object.class.getResourceAsStream(this.fileName);
-		BufferedReader buffer = new BufferedReader(new InputStreamReader(stream));
+  @Override
+  public void run() {
+    InputStream stream = Object.class.getResourceAsStream(this.fileName);
+    var buffer = new BufferedReader(new InputStreamReader(stream));
 
-		try {
-			String line = null;
+    try {
+      String line = null;
 
-			while ((line = buffer.readLine()) != null) {
-				String s = MessageFormat.format("{0} {1} {2}",
-						ZonedDateTime.now().format(DateTimeFormatter.ISO_INSTANT), Thread.currentThread().getName(),
-						line);
-				lines.add(s);
-			}
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-	}
+      while ((line = buffer.readLine()) != null) {
+        String s =
+            MessageFormat.format(
+                "{0} {1} {2}",
+                ZonedDateTime.now().format(DateTimeFormatter.ISO_INSTANT),
+                Thread.currentThread().getName(),
+                line);
+        lines.add(s);
+      }
+    } catch (IOException e) {
+      e.printStackTrace();
+    }
+  }
 }

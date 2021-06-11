@@ -1,32 +1,32 @@
 package com.saalamsaifi.playground.string;
 
 public class OneAwayApplication {
-	private boolean oneAway(String source, String input) {
-		if (source.length() < input.length()) {
-			return oneAway(input, source);
-		}
+  public static void main(String[] args) {
+    var application = new OneAwayApplication();
 
-		int count = 0;
+    System.out.println(application.oneAway("pale", "ple"));
+    System.out.println(application.oneAway("ple", "pale"));
+    System.out.println(application.oneAway("pales", "pale"));
+    System.out.println(application.oneAway("pale", "bale"));
+    System.out.println(application.oneAway("pale", "bake"));
+  }
 
-		for (int i = 0; i < source.length() && i < input.length(); i++) {
-			if (!(source.charAt(i) == input.charAt(i) || source.charAt(i + 1) == input.charAt(i))) {
-				count++;
-				if (count > 1) {
-					return false;
-				}
-			}
-		}
+  private boolean oneAway(String source, String input) {
+    if (source.length() < input.length()) {
+      return oneAway(input, source);
+    }
 
-		return true;
-	}
+    var count = 0;
 
-	public static void main(String[] args) {
-		OneAwayApplication application = new OneAwayApplication();
+    for (var i = 0; i < source.length() && i < input.length(); i++) {
+      if (!(source.charAt(i) == input.charAt(i) || source.charAt(i + 1) == input.charAt(i))) {
+        count++;
+        if (count > 1) {
+          return false;
+        }
+      }
+    }
 
-		System.out.println(application.oneAway("pale", "ple"));
-		System.out.println(application.oneAway("ple", "pale"));
-		System.out.println(application.oneAway("pales", "pale"));
-		System.out.println(application.oneAway("pale", "bale"));
-		System.out.println(application.oneAway("pale", "bake"));
-	}
+    return true;
+  }
 }

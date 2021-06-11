@@ -1,5 +1,5 @@
-package com.saalamsaifi.design.pattern.di.service;
+package com.saalamsaifi.playground.design.pattern.di.service;
 
 public interface MessageService {
-	void sendMessage(String message, String receiver);
+  void sendMessage(String message, String receiver);
 }

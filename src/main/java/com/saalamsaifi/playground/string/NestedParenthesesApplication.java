@@ -1,34 +1,34 @@
 package com.saalamsaifi.playground.string;
 
 public class NestedParenthesesApplication {
-	private boolean isNestedProperly(String expression) {
-		int count = 0;
+  public static void main(String[] args) {
+    var application = new NestedParenthesesApplication();
 
-		for (int i = 0; i < expression.length(); i++) {
-			char ch = expression.charAt(i);
+    System.out.println(application.isNestedProperly("()"));
+    System.out.println(application.isNestedProperly("))"));
+    System.out.println(application.isNestedProperly("(("));
+    System.out.println(application.isNestedProperly(")("));
+  }
 
-			if (ch == '(') {
-				count++;
-			} else if (ch == ')') {
-				count--;
+  private boolean isNestedProperly(String expression) {
+    var count = 0;
 
-				if (count < 0) {
-					return false;
-				}
-			} else {
-				throw new IllegalArgumentException("Invalid character: " + ch);
-			}
-		}
+    for (var i = 0; i < expression.length(); i++) {
+      var ch = expression.charAt(i);
 
-		return count == 0;
-	}
+      if (ch == '(') {
+        count++;
+      } else if (ch == ')') {
+        count--;
 
-	public static void main(String[] args) {
-		NestedParenthesesApplication application = new NestedParenthesesApplication();
+        if (count < 0) {
+          return false;
+        }
+      } else {
+        throw new IllegalArgumentException("Invalid character: " + ch);
+      }
+    }
 
-		System.out.println(application.isNestedProperly("()"));
-		System.out.println(application.isNestedProperly("))"));
-		System.out.println(application.isNestedProperly("(("));
-		System.out.println(application.isNestedProperly(")("));
-	}
+    return count == 0;
+  }
 }

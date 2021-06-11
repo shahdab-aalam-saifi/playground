@@ -1,16 +1,20 @@
 package com.saalamsaifi.playground.design.pattern.creation.abstractfactory;
 
 public class FactoryCreator {
-	public static AbstractFactory getFactory(FactoryType type) {
-		switch (type) {
-		case BANK:
-			return new BankFactory();
+  private FactoryCreator() {
+    throw new UnsupportedOperationException();
+  }
 
-		case LOAN:
-			return new LoanFactory();
+  public static AbstractFactory getFactory(FactoryType type) {
+    switch (type) {
+      case BANK:
+        return new BankFactory();
 
-		default:
-			return null;
-		}
-	}
+      case LOAN:
+        return new LoanFactory();
+
+      default:
+        return null;
+    }
+  }
 }

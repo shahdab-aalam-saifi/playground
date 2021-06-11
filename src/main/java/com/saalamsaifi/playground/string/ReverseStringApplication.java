@@ -1,26 +1,25 @@
 package com.saalamsaifi.playground.string;
 
 public class ReverseStringApplication {
-	private String reverse(String source) {
-		if (source == null) {
-			return null;
-		}
+  public static void main(String[] args) {
+    var application = new ReverseStringApplication();
 
-		StringBuilder sb = new StringBuilder();
+    System.out.println(application.reverse("--> --> -->"));
+    System.out.println(application.reverse("> *** <"));
+    System.out.println(application.reverse("Shahdab Aalam Saifi"));
+  }
 
-		for (int i = source.length() - 1; i >= 0; i--) {
-			sb.append(source.charAt(i));
-		}
+  private String reverse(String source) {
+    if (source == null) {
+      return null;
+    }
 
-		return sb.toString();
-	}
+    var sb = new StringBuilder();
 
-	public static void main(String[] args) {
-		ReverseStringApplication application = new ReverseStringApplication();
+    for (var i = source.length() - 1; i >= 0; i--) {
+      sb.append(source.charAt(i));
+    }
 
-		System.out.println(application.reverse("--> --> -->"));
-		System.out.println(application.reverse("> *** <"));
-		System.out.println(application.reverse("Shahdab Aalam Saifi"));
-	}
-
+    return sb.toString();
+  }
 }

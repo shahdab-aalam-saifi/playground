@@ -6,32 +6,32 @@ import java.util.List;
 import java.util.Set;
 
 public class RemoveDuplicateApplication {
-	private List<Integer> removeDuplicates(final List<Integer> list) {
-		if (list == null) {
-			return new ArrayList<>();
-		}
+  public static void main(String[] args) {
+    var application = new RemoveDuplicateApplication();
 
-		Set<Integer> set = new HashSet<>(list);
+    List<Integer> integers = new ArrayList<>();
 
-		list.clear();		
-		list.addAll(set);
-		
-		return list;
-	}
+    integers.add(10);
+    integers.add(22);
+    integers.add(12);
+    integers.add(10);
+    integers.add(21);
+    integers.add(22);
+    integers.add(30);
 
-	public static void main(String[] args) {
-		RemoveDuplicateApplication application = new RemoveDuplicateApplication();
+    System.out.println(application.removeDuplicates(integers));
+  }
 
-		List<Integer> integers = new ArrayList<>();
+  private List<Integer> removeDuplicates(final List<Integer> list) {
+    if (list == null) {
+      return new ArrayList<>();
+    }
 
-		integers.add(10);
-		integers.add(22);
-		integers.add(12);
-		integers.add(10);
-		integers.add(21);
-		integers.add(22);
-		integers.add(30);
+    Set<Integer> set = new HashSet<>(list);
 
-		System.out.println(application.removeDuplicates(integers));
-	}
+    list.clear();
+    list.addAll(set);
+
+    return list;
+  }
 }
