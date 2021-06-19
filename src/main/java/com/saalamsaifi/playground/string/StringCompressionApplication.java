@@ -1,15 +1,11 @@
 package com.saalamsaifi.playground.string;
 
 public class StringCompressionApplication {
-  public static void main(String[] args) {
-    var application = new StringCompressionApplication();
+  public String compress(String source) {
+    if (source == null) {
+      return null;
+    }
 
-    System.out.println(application.compress("aaabbcc"));
-    System.out.println(application.compress("abcabc"));
-    System.out.println(application.compress("aabbbbac"));
-  }
-
-  private String compress(String source) {
     var builder = new StringBuilder();
     var count = 0;
 
@@ -22,6 +18,7 @@ public class StringCompressionApplication {
         count = 0;
       }
     }
+
     return builder.length() < source.length() ? builder.toString() : source;
   }
 }
