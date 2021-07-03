@@ -27,13 +27,13 @@ public class PatternSyntaxCheckerTest {
           it(
               "should return VALID when string is empty",
               () -> {
-                assertEquals("INVALID", application.syntaxChecker(""));
+                assertEquals("VALID", application.syntaxChecker(""));
               });
 
           it(
               "should return VALID when string is not empty",
               () -> {
-                assertEquals("INVALID", application.syntaxChecker("[A-Z]"));
+                assertEquals("VALID", application.syntaxChecker("[A-Z]"));
               });
         });
   }
