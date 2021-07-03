@@ -13,7 +13,7 @@ public class VowelConsonantCountApplication {
             .chars()
             .mapToObj(ch -> (char) ch)
             .filter(ch -> (ch >= 'a' && ch <= 'z'))
-            .collect(Collectors.partitioningBy(c -> VOWELS.contains(c), Collectors.counting()));
+            .collect(Collectors.partitioningBy(ch -> VOWELS.contains(ch), Collectors.counting()));
 
     return Pair.of(result.get(true), result.get(false));
   }

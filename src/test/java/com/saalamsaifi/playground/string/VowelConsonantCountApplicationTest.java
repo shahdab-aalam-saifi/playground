@@ -16,12 +16,13 @@ public class VowelConsonantCountApplicationTest {
     beforeAll(() -> application = new VowelConsonantCountApplication());
 
     describe(
-        "reverseWords",
+        "countVowelAndConsonants",
         () -> {
           it(
-              "reverse",
+              "count",
               () -> {
-                var result = application.countVowelAndConsonants("SAALAMSAIFI@GMAIL.COM");
+                VowelConsonantCountApplication.Pair<Long, Long> result =
+                    application.countVowelAndConsonants("SAALAMSAIFI@GMAIL.COM");
 
                 assertEquals(9L, result.getVowels().longValue());
                 assertEquals(10L, result.getConsonants().longValue());
