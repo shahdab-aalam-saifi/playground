@@ -13,19 +13,30 @@ public class DuplicateCharacterApplicationTest {
   private DuplicateCharacterApplication application;
 
   {
-    beforeAll(
-        () -> application = new DuplicateCharacterApplication());
+    beforeAll(() -> application = new DuplicateCharacterApplication());
 
     describe(
         "countDuplicateCharacters",
         () -> {
           it(
-              "count characters",
+              "should count duplicate characters",
               () -> {
                 var result = application.countDuplicateCharacters("shahdab-aalam-saifi");
 
                 assertEquals(6, result.get("a").longValue());
                 assertEquals(2, result.get("s").longValue());
+              });
+        });
+
+    describe(
+        "removeDuplicateCharacters",
+        () -> {
+          it(
+              "should remove duplicates",
+              () -> {
+                var result = application.removeDuplicateCharacters("shahdab-aalam-saifi");
+
+                assertEquals("shadb-lmif", result);
               });
         });
   }

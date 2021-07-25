@@ -1,6 +1,7 @@
 package com.saalamsaifi.playground.string;
 
 import com.greghaskins.spectrum.Spectrum;
+import com.saalamsaifi.playground.common.model.Pair;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
@@ -21,11 +22,11 @@ public class VowelConsonantCountApplicationTest {
           it(
               "count",
               () -> {
-                VowelConsonantCountApplication.Pair<Long, Long> result =
+                Pair<Long, Long> result =
                     application.countVowelAndConsonants("SAALAMSAIFI@GMAIL.COM");
 
-                assertEquals(9L, result.getVowels().longValue());
-                assertEquals(10L, result.getConsonants().longValue());
+                assertEquals(9L, result.getKey().longValue());
+                assertEquals(10L, result.getValue().longValue());
               });
         });
   }
